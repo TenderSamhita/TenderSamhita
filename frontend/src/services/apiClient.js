@@ -1,17 +1,20 @@
 /**
- * API Client with timeout, JSON parsing, and graceful isolated fallback.
+ * API Client with timeout, JSON parsing, and production-ready base URL handling
  */
 
-const API_BASE = ''; // Proxied via Vite to http://localhost:8000
+const API_BASE =
+  import.meta.env.VITE_API_BASE || "http://localhost:8000";
 
 export async function request(endpoint, options = {}) {
   const url = `${API_BASE}${endpoint}`;
+
   const defaultHeaders = {
-    'Accept': 'application/json',
+    Accept: "application/json",
   };
 
+  // Only add Content-Type if NOT FormData
   if (!(options.body instanceof FormData)) {
-    defaultHeaders['Content-Type'] = 'application/json';
+    defaultHeaders["Content-Type"] = "application/json";
   }
 
   const config = {
@@ -22,8 +25,10 @@ export async function request(endpoint, options = {}) {
     },
   };
 
+  // Timeout handling
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), options.timeout || 15000);
+  const timeout = options.timeout || 15000;
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
   config.signal = controller.signal;
 
   try {
@@ -32,12 +37,15 @@ export async function request(endpoint, options = {}) {
 
     if (!response.ok) {
       let errorMessage = `HTTP Error ${response.status}`;
+
       try {
         const errorData = await response.json();
-        errorMessage = errorData.detail || errorData.message || errorMessage;
-      } catch (e) {
+        errorMessage =
+          errorData.detail || errorData.message || errorMessage;
+      } catch {
         // ignore non-json error
       }
+
       const error = new Error(errorMessage);
       error.status = response.status;
       throw error;
@@ -46,9 +54,11 @@ export async function request(endpoint, options = {}) {
     return await response.json();
   } catch (error) {
     clearTimeout(timeoutId);
-    if (error.name === 'AbortError') {
-      throw new Error(`Request timed out after ${options.timeout || 15000}ms`);
+
+    if (error.name === "AbortError") {
+      throw new Error(`Request timed out after ${timeout}ms`);
     }
+
     throw error;
   }
 }
