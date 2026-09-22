@@ -1,0 +1,344 @@
+INFO:     127.0.0.1:62263 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50410 - "GET /app/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62957 - "GET /app/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62957 - "GET /assets/index-xuyhKczH.js HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54006 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49224 - "GET /app/ HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:54766 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49224 - "GET /assets/index-xuyhKczH.js HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49224 - "GET /app/ HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:54766 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49224 - "GET /assets/index-xuyhKczH.js HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49224 - "GET /app/ HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49224 - "GET /assets/index-xuyhKczH.js HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54766 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54766 - "GET /app/ HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:54766 - "GET /assets/index-xuyhKczH.js HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49224 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49224 - "GET /app/ HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:54766 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49224 - "GET /assets/index-xuyhKczH.js HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59982 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59984 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59986 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59988 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60171 - "GET /api/standards/IS_8073_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60173 - "GET /api/standards/IS_8073_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60175 - "GET /api/standards/IS_8073_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53615 - "GET /api/standards/IS_8073_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53617 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53619 - "POST /api/compare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64014 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51680 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51680 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51680 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60675 - "GET /app/ HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57288 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60675 - "GET /assets/index-xuyhKczH.js HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62171 - "GET /app/ HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:62171 - "GET /assets/index-xuyhKczH.js HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50147 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52606 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52606 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63472 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64355 - "GET /assets/index-Bafzm9sf.css HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58169 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63305 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63308 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63311 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51200 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51202 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51205 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51207 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65431 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65430 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65434 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65438 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65436 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60092 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60095 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60093 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60099 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65432 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60097 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60101 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59369 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62500 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59373 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62499 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60094 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58732 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59371 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57407 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60983 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60906 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52350 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54868 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54870 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56118 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54872 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54867 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49670 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49674 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59032 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51339 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54866 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64722 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62752 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62988 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63243 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65378 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57706 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56663 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64594 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58716 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59222 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58794 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58870 - "POST /api/compare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58869 - "POST /api/compare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55138 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55139 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55137 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55044 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54769 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53955 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52155 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57087 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56232 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56231 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56230 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52209 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60259 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60261 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56226 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64939 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56413 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56414 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50797 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50795 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50798 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56928 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56926 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55469 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62135 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57063 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64331 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57061 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58963 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57062 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61422 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61418 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58365 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63995 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56076 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61420 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56170 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62826 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53018 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51270 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61059 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49994 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65507 - "POST /api/compare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65508 - "POST /api/compare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56981 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56980 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57167 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54153 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56685 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53081 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62253 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63253 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63255 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63252 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63257 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58255 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58253 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55819 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58618 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63251 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64795 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57169 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59015 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55122 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55120 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50794 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60969 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55121 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51793 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64765 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58689 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52228 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52663 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52664 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52662 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55030 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50685 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55028 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57045 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64461 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53775 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53773 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57235 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57239 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57237 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53723 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61113 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53774 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56911 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64294 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64290 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61425 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64854 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55178 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63962 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58100 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57630 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64293 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51836 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57628 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57285 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52119 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62050 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64670 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60609 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60615 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60607 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61047 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60613 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65185 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65187 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51038 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65184 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58477 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60608 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64787 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60614 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62985 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57707 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61809 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55047 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57706 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61807 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62707 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65110 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63513 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63542 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51283 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51284 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51278 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51277 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51279 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51280 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57196 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57192 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61046 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61049 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57195 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54617 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50976 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50324 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61865 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55624 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55625 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55623 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58458 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55621 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58460 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49320 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55899 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53625 - "POST /api/compare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53624 - "POST /api/compare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61838 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61837 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49866 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49863 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54305 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56277 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49864 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51533 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63666 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61506 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64174 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65356 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54966 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61316 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62038 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60440 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55550 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62054 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53638 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51932 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54475 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57168 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62811 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62812 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51345 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50405 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60990 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55866 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53043 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64578 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64576 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54863 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54865 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64577 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59018 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60362 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60363 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63688 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63686 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63958 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63960 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63687 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53788 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64134 - "GET /api/standards/IS_19603_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58196 - "GET /api/standards/IS_19603_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58195 - "GET /api/standards/IS_19603_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49675 - "GET /api/standards/IS_19603_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49678 - "GET /api/standards/IS_19603_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63186 - "GET /api/standards/IS_19603_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54167 - "GET /api/standards/IS_19603_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62636 - "GET /api/standards/IS_19603_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58194 - "GET /api/standards/IS_19603_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56719 - "GET /api/standards/IS_19603_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61231 - "GET /api/standards/ASTM_A_27 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63073 - "GET /api/standards/ASTM_A_27/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63072 - "GET /api/standards/ASTM_A_27/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61232 - "GET /api/standards/ASTM_A_27/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55358 - "GET /api/standards/ASTM_A_27/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50086 - "GET /api/embedding/info HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50083 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50087 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50443 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50832 - "GET /api/standards?limit=3 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54375 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54379 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54381 - "GET /api/standards/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54384 - "GET /api/search?q=jet+fuel+thermal+oxidation+test+method&limit=3 HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:54247 - "POST /api/search HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:54250 - "POST /api/recommend HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:59443 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54749 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49669 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49675 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49679 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49681 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49332 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49334 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57327 - "POST /api/recommend HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57330 - "POST /api/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55491 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55493 - "GET /api/standards/IS_1448_Part_97_2026/tables HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62561 - "GET /api/standards/IS_1448_Part_97_2026/figures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62563 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62565 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62567 - "POST /api/compare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50325 - "GET /api/standards/IS_1448_Part_97_2026/references HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50330 - "POST /api/tender/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64828 - "GET /api/standards/IS_19850_2026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64830 - "GET /api/standards/IS_1448_Part_97_2026 HTTP/1.1" 200 OK

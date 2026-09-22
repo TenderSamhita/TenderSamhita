@@ -1,0 +1,10 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+frontend/node_modules/
+node_modules/
+data/processed/
+data/bis.db
+data/indexes/

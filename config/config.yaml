@@ -1,0 +1,101 @@
+# BIS Procurement Engine — Configuration
+# All paths are relative to project root unless absolute.
+
+project:
+  name: "BIS Procurement Standards Recommendation Engine"
+  version: "0.1.0"
+
+paths:
+  # Primary corpus — points to already-downloaded BIS PDFs (do NOT copy)
+  raw_pdfs: "D:/BIS/AI_RECOMMENDATION_ENGINE-scraper/AI_RECOMMENDATION_ENGINE-scraper/BIS_PDFs_Part1"
+  processed_dir: "data/processed"
+  json_dir: "data/processed/json"
+  text_dir: "data/processed/text"
+  tables_dir: "data/processed/tables"
+  figures_dir: "data/processed/figures"
+  pages_dir: "data/processed/pages"
+  embeddings_dir: "data/embeddings"
+  indexes_dir: "data/indexes"
+  db_path: "data/bis.db"
+  # Debug dumps (inspect_pdf per-document)
+  debug_dir: "data/debug"
+
+ingestion:
+  # Incremental hash skip
+  use_hash_cache: true
+  # Text extraction quality gate
+  min_text_chars_per_page: 30
+  ocr_trigger_threshold: 500  # if total doc chars < threshold, flag OCR_REQUIRED
+  max_pages_for_test: 0  # 0 = all pages
+  batch_size: 20
+  # Section detection
+  section_heading_regexes:
+    - '^\s*(\d+(?:\.\d+)*)\s+[A-Z][A-Za-z \-\/&,()]+$'
+    - '^\s*(Scope|Normative references|Terms and definitions|Principle|Reagents|Apparatus|Sampling|Preparation|Calibration|Procedure|Precision|Test report|Annex|Bibliography|Foreword)\b'
+  # Table extraction
+  table_strategy: "auto"  # auto tries lattice then stream
+  # Figure extraction
+  figure:
+    header_band_ratio: 0.12   # top 12% = header
+    footer_band_ratio: 0.10   # bottom 10% = footer
+    min_width_ratio: 0.08
+    min_height_ratio: 0.06
+    dup_threshold: 0.92       # perceptual hash hamming similarity for logo dedup
+    freq_reject_ratio: 0.35   # if image appears on >35% pages → likely logo
+    tiny_area_threshold: 2500  # pixels
+    caption_window_chars: 800
+    confirmed_requires_caption: false  # if true, only caption-proximate images are confirmed
+
+chunking:
+  target_tokens: 500
+  max_tokens: 700
+  overlap_tokens: 50
+  min_chunk_chars: 80
+  preserve_tables: true
+  preserve_sections: true
+
+embedding:
+  # Active model — change here and run: python scripts/rebuild_index.py --force-rebuild
+  model: "BAAI/bge-small-en-v1.5"
+  normalize_embeddings: true
+  batch_size: 32
+  device: "cpu"
+  # Supported models (select based on evaluate_embeddings.py results):
+  #   BAAI/bge-small-en-v1.5          384d  ~33M params  CPU-friendly  [DEFAULT MVP]
+  #   BAAI/bge-base-en-v1.5           768d  ~109M params  balanced
+  #   sentence-transformers/all-MiniLM-L6-v2  384d  ~22M params  fastest
+  #   intfloat/e5-base-v2             768d  ~109M params  strong on passage retrieval
+
+retrieval:
+  semantic_weight: 0.50
+  bm25_weight: 0.30
+  metadata_weight: 0.20
+  top_k_semantic: 20
+  top_k_bm25: 20
+  top_k_final: 10
+  min_score_threshold: 0.15
+  rerank_weights:
+    semantic: 0.50
+    title: 0.20
+    scope: 0.15
+    material: 0.10
+    status: 0.05
+
+recommendation:
+  high_threshold: 0.65
+  medium_threshold: 0.40
+  abstain_threshold: 0.25
+  max_recommendations: 5
+
+tender:
+  max_pdf_size_mb: 25
+  allowed_extensions: [".pdf", ".txt"]
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins: ["*"]
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s | %(levelname)s | %(name)s | %(message)s"

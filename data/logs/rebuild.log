@@ -1,0 +1,9 @@
+Loaded 25769 chunks from DB
+Embedding 25769 chunks with sentence-transformers/all-MiniLM-L6-v2 (batch=64) ...
+Embeddings shape: (25769, 384) | dim=384
+FAISS saved: D:\BIS\bis-engine\data\indexes\faiss.index (25769 vectors)
+BM25 saved: D:\BIS\bis-engine\data\indexes\bm25.pkl
+Index rebuild complete.
+  FAISS:  D:\BIS\bis-engine\data\indexes\faiss.index
+  BM25:   D:\BIS\bis-engine\data\indexes\bm25.pkl
+  Chunks: 25769 | Standards: 676

@@ -1,0 +1,189 @@
+{
+  "_meta": {
+    "description": "BIS Retrieval Benchmark — manually labelled ground truth for embedding model evaluation",
+    "corpus": "BIS Indian Standards corpus (1304 PDFs, ~100k+ chunks)",
+    "labelled_by": "BIS project team — derived from known corpus documents",
+    "version": "1.0",
+    "note": "relevant_ids contains ALL relevant standard_ids for the query. The retrieval system must find at least one of them. relevant_topics lists alternative descriptions for semantic relevance scoring."
+  },
+  "queries": [
+    {
+      "id": "Q01",
+      "query": "thermal oxidation stability of gas turbine fuels JFTOT test method",
+      "relevant_ids": ["IS_1448_Part_97_2026"],
+      "relevant_topics": ["JFTOT", "jet fuel thermal oxidation", "aviation fuel stability", "heater tube rating"],
+      "category": "exact_test_method",
+      "difficulty": "easy"
+    },
+    {
+      "id": "Q02",
+      "query": "first filling and emptying of pressure tunnels and shafts guidelines",
+      "relevant_ids": ["IS_12633_2026"],
+      "relevant_topics": ["pressure tunnel", "hydraulic tunnel", "filling emptying procedure", "water conveyance"],
+      "category": "exact_standard",
+      "difficulty": "easy"
+    },
+    {
+      "id": "Q03",
+      "query": "explosive atmospheres electrical installation design selection verification",
+      "relevant_ids": ["IS_16724_2026"],
+      "relevant_topics": ["Ex equipment", "hazardous area", "Zone 0 Zone 1 Zone 2", "ATEX", "flammable gas"],
+      "category": "exact_standard",
+      "difficulty": "medium"
+    },
+    {
+      "id": "Q04",
+      "query": "yoga terminology gheranda samhita asana pranayama",
+      "relevant_ids": ["IS_17874_Part_2_2026"],
+      "relevant_topics": ["yoga terms", "asana nomenclature", "traditional yoga texts", "pranayama definition"],
+      "category": "exact_standard",
+      "difficulty": "easy"
+    },
+    {
+      "id": "Q05",
+      "query": "aviation turbine fuel petroleum products methods of test",
+      "relevant_ids": ["IS_1448_Part_97_2026"],
+      "relevant_topics": ["ATF", "jet fuel", "petroleum test method", "fuel specification"],
+      "category": "semantic_broad",
+      "difficulty": "easy"
+    },
+    {
+      "id": "Q06",
+      "query": "structural steel hot rolled plates sheets strips mechanical properties",
+      "relevant_ids": ["IS_2062_Part_2_2026"],
+      "relevant_topics": ["hot rolled steel", "tensile strength", "yield stress", "structural steel grades"],
+      "category": "material_property",
+      "difficulty": "medium"
+    },
+    {
+      "id": "Q07",
+      "query": "steel grade E250 E300 E350 tensile yield elongation",
+      "relevant_ids": ["IS_2062_Part_2_2026"],
+      "relevant_topics": ["steel grade E250", "mechanical test", "elongation percentage", "tensile testing"],
+      "category": "specification_lookup",
+      "difficulty": "hard"
+    },
+    {
+      "id": "Q08",
+      "query": "scope of thermal oxidation test heater tube deposit rating",
+      "relevant_ids": ["IS_1448_Part_97_2026"],
+      "relevant_topics": ["heater tube rating", "lacquer deposit", "JFTOT rating scale", "thermal stability"],
+      "category": "scope_section",
+      "difficulty": "medium"
+    },
+    {
+      "id": "Q09",
+      "query": "normative references for structural steel IS 1 IS 2 IS 226",
+      "relevant_ids": ["IS_2062_Part_2_2026"],
+      "relevant_topics": ["normative reference", "referenced standards", "IS 1 IS 2 requirements"],
+      "category": "reference_lookup",
+      "difficulty": "hard"
+    },
+    {
+      "id": "Q10",
+      "query": "electrical equipment protection Ex d flameproof enclosure zone classification",
+      "relevant_ids": ["IS_16724_2026"],
+      "relevant_topics": ["flameproof enclosure", "Ex d", "zone 1 classification", "explosion protection"],
+      "category": "technical_specification",
+      "difficulty": "medium"
+    },
+    {
+      "id": "Q11",
+      "query": "pressure shaft water hammer surge analysis emptying velocity",
+      "relevant_ids": ["IS_12633_2026"],
+      "relevant_topics": ["water hammer", "surge pressure", "hydropower tunnel", "flow velocity control"],
+      "category": "technical_specification",
+      "difficulty": "hard"
+    },
+    {
+      "id": "Q12",
+      "query": "petroleum fuel flash point fire point test apparatus closed cup",
+      "relevant_ids": ["IS_1448_Part_97_2026"],
+      "relevant_topics": ["flash point", "fire point", "Pensky-Martens", "closed cup apparatus"],
+      "category": "test_apparatus",
+      "difficulty": "medium"
+    },
+    {
+      "id": "Q13",
+      "query": "yoga asana standardization Indian traditional knowledge classification",
+      "relevant_ids": ["IS_17874_Part_2_2026"],
+      "relevant_topics": ["yoga asana classification", "Indian traditional practice", "yoga standard terms"],
+      "category": "semantic_broad",
+      "difficulty": "medium"
+    },
+    {
+      "id": "Q14",
+      "query": "hot rolled weldable steel chemical composition carbon manganese silicon",
+      "relevant_ids": ["IS_2062_Part_2_2026"],
+      "relevant_topics": ["chemical composition", "carbon equivalent", "weldable steel", "ladle analysis"],
+      "category": "material_composition",
+      "difficulty": "hard"
+    },
+    {
+      "id": "Q15",
+      "query": "IS 1448 Part 97 2026 Indian Standard petroleum test",
+      "relevant_ids": ["IS_1448_Part_97_2026"],
+      "relevant_topics": ["IS 1448", "Part 97", "petroleum methods of test"],
+      "category": "exact_IS_number",
+      "difficulty": "easy"
+    },
+    {
+      "id": "Q16",
+      "query": "IS 12633 hydraulic structures tunnels filling procedure Indian standard",
+      "relevant_ids": ["IS_12633_2026"],
+      "relevant_topics": ["IS 12633", "hydraulic structure", "tunnel filling"],
+      "category": "exact_IS_number",
+      "difficulty": "easy"
+    },
+    {
+      "id": "Q17",
+      "query": "area classification hazardous zone gas vapour concentration LEL",
+      "relevant_ids": ["IS_16724_2026"],
+      "relevant_topics": ["hazardous area classification", "lower explosive limit", "LEL", "gas group"],
+      "category": "technical_concept",
+      "difficulty": "medium"
+    },
+    {
+      "id": "Q18",
+      "query": "sample preparation calibration procedure reagents for fuel testing laboratory",
+      "relevant_ids": ["IS_1448_Part_97_2026"],
+      "relevant_topics": ["laboratory preparation", "calibration standard", "reagent grade", "fuel sample prep"],
+      "category": "procedure_lookup",
+      "difficulty": "medium"
+    },
+    {
+      "id": "Q19",
+      "query": "steel plates weldability carbon equivalent procurement specification Indian procurement",
+      "relevant_ids": ["IS_2062_Part_2_2026"],
+      "relevant_topics": ["weldability", "carbon equivalent", "procurement specification", "steel procurement"],
+      "category": "procurement_context",
+      "difficulty": "hard"
+    },
+    {
+      "id": "Q20",
+      "query": "Indian standard annex normative informative bibliography list",
+      "relevant_ids": [],
+      "relevant_topics": [],
+      "category": "generic_non_specific",
+      "difficulty": "negative",
+      "note": "Should NOT retrieve any single specific standard with high confidence — tests false positive rate"
+    },
+    {
+      "id": "Q21",
+      "query": "IS 99999 some nonexistent standard zygote quantum astrophysics",
+      "relevant_ids": [],
+      "relevant_topics": [],
+      "category": "hallucination_probe",
+      "difficulty": "negative",
+      "note": "Must produce low confidence / abstain — no valid relevant standard"
+    },
+    {
+      "id": "Q22",
+      "query": "scope of IS 2062 structural steel for general structural purposes",
+      "relevant_ids": ["IS_2062_Part_2_2026"],
+      "relevant_topics": ["IS 2062 scope", "structural purposes", "weldable structural steel"],
+      "category": "scope_exact",
+      "difficulty": "easy"
+    }
+  ]
+}
