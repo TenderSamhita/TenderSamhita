@@ -18,8 +18,8 @@ function AppNav() {
   const { currentView, navigateTo } = useApp();
 
   const navItems = [
-    { id: 'overview', label: 'Overview' },
-    { id: 'procurement', label: 'Procurements' },
+    { id: 'overview', label: 'Home' },
+    { id: 'procurement', label: 'Procurement' },
     { id: 'standards', label: 'Standards' },
     { id: 'search', label: 'Search' },
   ];
@@ -39,7 +39,7 @@ function AppNav() {
       <button
         className={`nav-item ${currentView === 'system' ? 'active' : ''}`}
         onClick={() => navigateTo('system')}
-        style={{ fontSize: '11.5px', color: 'var(--text-muted)' }}
+        style={{ fontSize: '11.5px', color: '#66706A' }}
       >
         System
       </button>

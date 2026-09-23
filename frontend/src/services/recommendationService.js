@@ -13,7 +13,8 @@ export const recommendationService = {
     try {
       const data = await request('/api/recommend', {
         method: 'POST',
-        body: JSON.stringify({ query: query.trim(), top_k: topK })
+        body: JSON.stringify({ query: query.trim(), top_k: topK }),
+        timeout: 90000
       });
 
       return {

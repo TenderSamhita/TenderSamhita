@@ -1,20 +1,12 @@
-INFO:     Started server process [5704]
+INFO:     Started server process [23056]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Uvicorn running on http://127.0.0.1:8009 (Press CTRL+C to quit)
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1790022355.379351   26124 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1790163338.313752   21584 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 C:\Users\Harsh Goswami\AppData\Local\Programs\Python\Python310\lib\site-packages\google\api_core\_python_version_support.py:263: FutureWarning: You are using a Python version (3.10.0) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
   warnings.warn(message, FutureWarning)
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1790022360.641493   26124 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1790163341.675322   21584 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING:tensorflow:From C:\Users\Harsh Goswami\AppData\Local\Programs\Python\Python310\lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
 
-Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
-handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
-Traceback (most recent call last):
-  File "C:\Users\Harsh Goswami\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File "C:\Users\Harsh Goswami\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 162, in _call_connection_lost
-    self._sock.shutdown(socket.SHUT_RDWR)
-ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host

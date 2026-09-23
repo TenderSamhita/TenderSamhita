@@ -34,29 +34,47 @@ export function NodeDetailPanel({ node, onClose, standard, tables = [], figures 
         return (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div>
-              <span className="mono-val" style={{ fontSize: '16px', fontWeight: 800, color: 'var(--navy-900)' }}>
-                {standard.is_number}
+              <span className="mono-val" style={{ fontSize: '14px', fontWeight: 800, color: '#245B4A' }}>
+                {standard.is_number || 'Standard'}
               </span>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginTop: 4 }}>
-                {standard.title}
+              <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#202522', marginTop: 4 }}>
+                {standard.title || 'Not established from available evidence.'}
               </div>
             </div>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
               <span className="status-pill status-current">{standard.status || 'CURRENT'}</span>
-              <span className="status-pill status-neutral">{standard.edition || 'Second Revision'}</span>
-              <span className="status-pill status-neutral">ICS {standard.ics_code || '75.160.20'}</span>
+              <span className="status-pill status-neutral">{standard.edition || 'Current Edition'}</span>
+              {standard.ics_code && <span className="status-pill status-neutral">ICS {standard.ics_code}</span>}
+              {standard.edition_year && <span className="status-pill status-neutral">{standard.edition_year}</span>}
+              {standard.iso_reference && <span className="status-pill status-neutral">{standard.iso_reference}</span>}
             </div>
 
-            <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, background: '#f8fafc', padding: '10px 12px', borderRadius: 4, border: '1px solid var(--border-subtle)' }}>
-              <strong>Scope:</strong> {standard.scope}
+            <div style={{ fontSize: '11.5px', color: '#3A4440', lineHeight: 1.5, background: '#F1EFE9', padding: '10px 12px', borderRadius: 6, border: '1px solid #D8D7D1' }}>
+              <strong>Scope:</strong> {standard.scope || 'Not established from available evidence.'}
             </div>
+
+            {standard.sections && standard.sections.length > 0 && (
+              <div style={{ fontSize: '11.5px', color: '#66706A' }}>
+                <strong>Sections:</strong> {standard.sections.slice(0,4).map(s=>s.title||s.section_number).join(' · ')}
+              </div>
+            )}
+
+            {standard.specifications && standard.specifications.length > 0 && (
+              <div style={{ fontSize: '11.5px' }}>
+                <strong style={{ color: '#245B4A' }}>Key spec:</strong>{' '}
+                <span className="mono-val" style={{ color: '#B85C38', fontWeight: 700 }}>
+                  {standard.specifications[0].property}: {standard.specifications[0].value} {standard.specifications[0].unit || ''}
+                </span>
+                <span style={{ color: '#66706A' }}> · p.{standard.specifications[0].page || '—'}</span>
+              </div>
+            )}
 
             <button
               onClick={() => openSourcePage(standard.standard_id, 1, '', standard.is_number)}
               className="btn-tech btn-primary btn-sm"
             >
-              <FileText size={13} /> Open Official Standard PDF
+              <FileText size={13} /> Open Source (Page 1)
             </button>
           </div>
         );
@@ -429,12 +447,23 @@ export function NodeDetailPanel({ node, onClose, standard, tables = [], figures 
         );
 
       default:
+        if (!node.label && !node.description) {
+          return (
+            <div style={{ fontSize: '12px', color: '#66706A', lineHeight: 1.6, padding: 8 }}>
+              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#202522', marginBottom: 6 }}>{node.id || 'Node'}</h4>
+              <p>Not established from available evidence.</p>
+              {standard.is_number && <p style={{ marginTop: 6, fontSize: '11px' }}>Standard: <span className="mono-val">{standard.is_number}</span> · Page {node.data?.page || '—'} · Section {node.data?.section || node.section || '—'}</p>}
+            </div>
+          );
+        }
         return (
-          <div style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-            <h4 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--navy-900)', marginBottom: 6 }}>
-              {node.label}
+          <div style={{ fontSize: '12.5px', color: '#3A4440', lineHeight: 1.5 }}>
+            <h4 style={{ fontSize: '14px', fontWeight: 700, color: '#245B4A', marginBottom: 6 }}>
+              {node.label || 'Knowledge Node'}
             </h4>
-            <p>{node.description || 'Clause content and technical relationships extracted from standard.'}</p>
+            <p>{node.description || 'Not established from available evidence.'}</p>
+            {node.data?.page && <p style={{ marginTop: 8, fontSize: '11px', color: '#66706A' }}>Page {node.data.page} · Section {node.data.section || '—'} · <span className="mono-val">{standard.is_number}</span></p>}
+            {node.badge && <p style={{ marginTop: 4, fontSize: '11px', color: '#66706A' }}>{node.badge}</p>}
           </div>
         );
     }
@@ -444,8 +473,8 @@ export function NodeDetailPanel({ node, onClose, standard, tables = [], figures 
     <div className="mindmap-side-panel">
       <div className="mindmap-panel-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <Layers size={15} color="var(--navy-700)" />
-          <span style={{ fontWeight: 700, fontSize: '12.5px', color: 'var(--navy-900)' }}>
+          <Layers size={15} color="#245B4A" />
+          <span style={{ fontWeight: 700, fontSize: '12.5px', color: '#245B4A' }}>
             NODE INTELLIGENCE
           </span>
         </div>

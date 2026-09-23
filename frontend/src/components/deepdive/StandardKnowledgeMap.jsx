@@ -223,9 +223,21 @@ export function StandardKnowledgeMap({ standard, tables = [], figures = [], refe
     }
   ], [standard, tables, figures, references, alliedStandards]);
 
-  // Center coordinates in canvas space
-  const centerX = 640;
-  const centerY = 360;
+  // Responsive canvas center — adapts to viewport, prevents huge empty areas
+  const [viewportSize, setViewportSize] = useState({ w: 1200, h: 640 });
+  useEffect(() => {
+    const update = () => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setViewportSize({ w: Math.max(800, rect.width), h: Math.max(500, rect.height) });
+      }
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+  const centerX = viewportSize.w / 2;
+  const centerY = viewportSize.h / 2;
 
   // Root Node Position
   const rootNode = useMemo(() => ({
@@ -235,7 +247,10 @@ export function StandardKnowledgeMap({ standard, tables = [], figures = [], refe
     x: centerX,
     y: centerY,
     nodeClass: 'node-root'
-  }), [standard.is_number]);
+  }), [standard.is_number, centerX, centerY]);
+
+  // Responsive radial distance — scales with viewport to avoid cramping or vast empty space
+  const baseRadius = Math.min(viewportSize.w, viewportSize.h) * 0.34;
 
   // Calculate layout coordinates for categories & expanded children
   const { visibleCategories, visibleChildren, links } = useMemo(() => {
@@ -252,9 +267,11 @@ export function StandardKnowledgeMap({ standard, tables = [], figures = [], refe
         if (activeFilter === 'CONFORMITY' && cat.id !== 'conformity') return;
       }
 
+      // Scale distance responsively: small viewport = tighter, large = more spread
+      const scaledDist = Math.min(cat.distance * 0.85, baseRadius + 40);
       const rad = (cat.angle * Math.PI) / 180;
-      const catX = centerX + cat.distance * Math.cos(rad);
-      const catY = centerY + cat.distance * Math.sin(rad);
+      const catX = centerX + scaledDist * Math.cos(rad);
+      const catY = centerY + scaledDist * Math.sin(rad);
 
       const catNode = {
         ...cat,
@@ -263,16 +280,16 @@ export function StandardKnowledgeMap({ standard, tables = [], figures = [], refe
       };
       cats.push(catNode);
 
-      // Root -> Category link
+      // Root -> Category link — use emergency palette
       linkList.push({
         id: `link-root-${cat.id}`,
         fromX: centerX,
         fromY: centerY,
         toX: catX,
         toY: catY,
-        color: cat.nodeClass.includes('saffron') ? '#ea580c' : 
-               cat.nodeClass.includes('allied') ? '#16a34a' : 
-               cat.nodeClass.includes('reference') ? '#2563eb' : '#94a3b8'
+        color: cat.nodeClass.includes('specification') ? '#B85C38' : 
+               cat.nodeClass.includes('allied') ? '#2F6B4F' : 
+               cat.nodeClass.includes('reference') ? '#2F5D8A' : '#B9C1BC'
       });
 
       // If expanded and has children, position children outward
@@ -295,22 +312,22 @@ export function StandardKnowledgeMap({ standard, tables = [], figures = [], refe
           };
           childNodes.push(childNode);
 
-          // Category -> Child link
+          // Category -> Child link — emergency palette
           linkList.push({
             id: `link-${cat.id}-${ch.id}`,
             fromX: catX,
             fromY: catY,
             toX: chX,
             toY: chY,
-            color: ch.colorType === 'saffron' ? '#ea580c' : 
-                   ch.colorType === 'green' ? '#16a34a' : '#cbd5e1'
+            color: ch.colorType === 'saffron' ? '#B85C38' : 
+                   ch.colorType === 'green' ? '#2F6B4F' : '#D8D7D1'
           });
         });
       }
     });
 
     return { visibleCategories: cats, visibleChildren: childNodes, links: linkList };
-  }, [categories, expandedCategories, activeFilter]);
+  }, [categories, expandedCategories, activeFilter, centerX, centerY, baseRadius]);
 
   // Mouse drag handlers for canvas panning
   const handleMouseDown = (e) => {
@@ -355,9 +372,10 @@ export function StandardKnowledgeMap({ standard, tables = [], figures = [], refe
     setPan({ x: 0, y: 0 });
   };
   const handleFit = () => {
-    setZoom(0.82);
-    setPan({ x: 40, y: 20 });
+    setZoom(0.92);
+    setPan({ x: 0, y: 0 });
   };
+  useEffect(() => { handleFit(); }, [viewportSize.w, viewportSize.h]);
 
   // Node selection
   const handleNodeClick = (node, e) => {
@@ -375,10 +393,10 @@ export function StandardKnowledgeMap({ standard, tables = [], figures = [], refe
       onMouseLeave={handleMouseUp}
     >
       
-      {/* 1. Category Filter Bar (Top) */}
-      <div className="mindmap-filter-bar">
-        <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--navy-900)', display: 'flex', alignItems: 'center', gap: 4, paddingRight: 4 }}>
-          <Filter size={11} /> MAP VIEW:
+      {/* 1. Category Filter Bar (Top) — compact, not huge vertical space */}
+      <div className="mindmap-filter-bar" style={{ top: 10, padding: '4px 8px', gap: 4 }}>
+        <span style={{ fontSize: '10px', fontWeight: 700, color: '#245B4A', display: 'flex', alignItems: 'center', gap: 4, paddingRight: 2 }}>
+          <Filter size={10} /> VIEW:
         </span>
 
         {[

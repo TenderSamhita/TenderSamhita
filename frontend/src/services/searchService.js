@@ -18,7 +18,8 @@ export const searchService = {
           query: query.trim(),
           mode: mode,
           top_k: topK
-        })
+        }),
+        timeout: 90000
       });
 
       return {

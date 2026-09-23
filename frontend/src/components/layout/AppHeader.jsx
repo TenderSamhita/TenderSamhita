@@ -27,82 +27,73 @@ export function AppHeader() {
         <TenderSamhitaLogo 
           variant="full" 
           height={32} 
-          theme="dark" 
-          onClick={() => navigateTo('dashboard')} 
+          theme="light" 
+          onClick={() => navigateTo('overview')} 
         />
 
         {/* Global Standards Search Shortcut */}
         <div 
           className="header-search" 
           onClick={() => navigateTo('search')}
-          title="Search Indian Standards catalog (Ctrl+K)"
+          title="Search Indian Standards catalog"
         >
-          <Search size={14} color="#94a3b8" />
+          <Search size={14} color="#66706A" />
           <span>Search standards, specifications, test methods...</span>
           <span className="header-search-kbd">⌘K</span>
         </div>
       </div>
 
-      {/* Right: Technical Actions & Navigation */}
+      {/* Right: Technical Actions */}
       <div className="header-right">
-        {/* Tender Analysis Shortcut */}
         <button
-          onClick={() => navigateTo('tender')}
-          className={`btn-tech btn-sm ${currentView === 'tender' ? 'btn-saffron' : 'btn-ghost'}`}
+          onClick={() => navigateTo('procurement')}
+          className={`btn-tech btn-sm ${currentView === 'procurement' ? 'btn-primary' : 'btn-ghost'}`}
           style={{ 
-            color: currentView === 'tender' ? '#ffffff' : '#e2e8f0',
-            backgroundColor: currentView === 'tender' ? 'var(--saffron)' : 'rgba(255,255,255,0.06)' 
+            color: currentView === 'procurement' ? '#ffffff' : '#202522',
+            backgroundColor: currentView === 'procurement' ? '#245B4A' : 'transparent',
+            border: currentView === 'procurement' ? 'none' : '1px solid #D8D7D1'
           }}
         >
           <FileText size={13} />
-          <span>Tender Analysis</span>
+          <span>Procurement</span>
         </button>
 
-        {/* Review Workspace (Dossier) */}
+        <button
+          onClick={() => navigateTo('search')}
+          className={`btn-tech btn-sm ${currentView === 'search' ? 'btn-primary' : 'btn-ghost'}`}
+          style={{ 
+            color: currentView === 'search' ? '#ffffff' : '#202522',
+            backgroundColor: currentView === 'search' ? '#245B4A' : 'transparent',
+            border: currentView === 'search' ? 'none' : '1px solid #D8D7D1'
+          }}
+        >
+          <Search size={13} />
+          <span>Search</span>
+        </button>
+
         <button
           onClick={() => navigateTo('review')}
-          className="btn-tech btn-sm"
-          style={{ 
-            backgroundColor: currentView === 'review' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.08)',
-            color: '#ffffff',
-            borderColor: 'rgba(255,255,255,0.15)'
-          }}
+          className="btn-tech btn-sm btn-ghost"
+          style={{ color: '#202522', border: '1px solid #D8D7D1' }}
           title="Open procurement officer review workspace"
         >
           <Bookmark size={13} />
-          <span>Review Dossier</span>
+          <span>Review</span>
           {totalDossierItems > 0 && (
             <span style={{
               marginLeft: 4,
-              backgroundColor: 'var(--saffron)',
+              backgroundColor: '#B85C38',
               color: '#ffffff',
               borderRadius: '10px',
               padding: '1px 6px',
               fontSize: '10px',
               fontWeight: 700,
-              boxShadow: '0 0 8px var(--saffron-glow)'
             }}>
               {totalDossierItems}
             </span>
           )}
         </button>
 
-        {/* Retrieval Debugger Shortcut (Per Section 28 of Audit) */}
-        <button
-          onClick={() => navigateTo('debug')}
-          className="btn-tech btn-ghost btn-sm"
-          style={{
-            color: currentView === 'debug' ? '#93c5fd' : '#94a3b8',
-            backgroundColor: currentView === 'debug' ? 'rgba(37,99,235,0.18)' : 'transparent',
-            padding: '5px 8px'
-          }}
-          title="Open Retrieval Diagnostic Debugger (/debug/retrieval)"
-        >
-          <Terminal size={13} />
-          <span style={{ fontSize: '11px' }}>RAG Debug</span>
-        </button>
-
-        {/* Live System Status Dot */}
         <div 
           onClick={() => navigateTo('system')}
           style={{
@@ -110,27 +101,23 @@ export function AppHeader() {
             alignItems: 'center',
             gap: 6,
             padding: '4px 10px',
-            borderRadius: '4px',
-            backgroundColor: 'rgba(255,255,255,0.06)',
-            border: '1px solid rgba(255,255,255,0.12)',
+            borderRadius: '6px',
+            backgroundColor: '#F1EFE9',
+            border: '1px solid #D8D7D1',
             cursor: 'pointer',
             fontSize: '11px',
-            color: systemOnline ? '#86efac' : '#fca5a5',
-            transition: 'all 0.15s ease'
+            color: systemOnline ? '#2F6B4F' : '#B64235',
           }}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.12)'}
-          onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)'}
-          title="Inspect backend retrieval index and service health"
+          title="Inspect backend health"
         >
           <span style={{
             width: 7,
             height: 7,
             borderRadius: '50%',
-            backgroundColor: systemOnline ? '#22c55e' : '#ef4444',
-            boxShadow: systemOnline ? '0 0 8px #22c55e' : '0 0 8px #ef4444'
+            backgroundColor: systemOnline ? '#2F6B4F' : '#B64235',
           }} />
-          <span style={{ fontWeight: 600, letterSpacing: '0.02em' }}>
-            {systemOnline ? 'System Online' : 'Index Degraded'}
+          <span style={{ fontWeight: 600 }}>
+            {systemOnline ? 'Online' : 'Degraded'}
           </span>
         </div>
       </div>

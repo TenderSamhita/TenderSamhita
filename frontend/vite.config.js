@@ -9,5 +9,9 @@ export default defineConfig({
       '/api': 'http://localhost:8000',
       '/figures': 'http://localhost:8000'
     }
+  },
+  preview: {
+    port: 4173,
+    host: '0.0.0.0'
   }
 })

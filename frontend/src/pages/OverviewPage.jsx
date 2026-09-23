@@ -22,61 +22,71 @@ export function OverviewPage() {
   };
 
   return (
-    <div className="workspace-container" style={{ maxWidth: 900, margin: '0 auto', paddingTop: 48 }}>
+    <div className="workspace-container" style={{ maxWidth: 860, margin: '0 auto', paddingTop: 36 }}>
       {/* Hero */}
-      <div style={{ textAlign: 'center', marginBottom: 40 }}>
+      <div style={{ textAlign: 'center', marginBottom: 32 }}>
         <img
           src="/logo.png"
           alt="Tender Samhita"
-          style={{ height: 56, width: 56, objectFit: 'contain', borderRadius: 8, marginBottom: 16 }}
+          style={{ height: 48, width: 48, objectFit: 'contain', borderRadius: 6, marginBottom: 12, border: '1px solid #D8D7D1' }}
         />
-        <h1 style={{ fontSize: 26, fontWeight: 800, color: 'var(--navy-900)', letterSpacing: '-0.02em', marginBottom: 6 }}>
+        <h1 style={{ fontSize: 28, fontWeight: 800, color: '#245B4A', letterSpacing: '0.04em', marginBottom: 4 }}>
           TENDER SAMHITA
         </h1>
-        <p style={{ fontSize: 14, color: 'var(--text-muted)', maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>
+        <p style={{ fontSize: 13, color: '#66706A', letterSpacing: '0.02em', textTransform: 'uppercase', fontWeight: 600 }}>
           Procurement Standards Intelligence
+        </p>
+        <p style={{ fontSize: 14, color: '#66706A', maxWidth: 520, margin: '8px auto 0', lineHeight: 1.6 }}>
+          Find the standards behind your procurement requirements.
         </p>
       </div>
 
-      {/* Primary Input */}
-      <div className="clean-panel" style={{ marginBottom: 32 }}>
-        <div className="clean-panel-body" style={{ padding: 24 }}>
+      {/* Primary Actions */}
+      <div className="clean-panel" style={{ marginBottom: 24 }}>
+        <div className="clean-panel-body" style={{ padding: 20 }}>
           <textarea
             rows={3}
             value={inputText}
             onChange={e => setInputText(e.target.value)}
-            placeholder="Describe your procurement requirement..."
+            placeholder="Describe your procurement requirement…  e.g. Grade 304 stainless steel water storage tank 500 litre for drinking water"
             style={{
               width: '100%',
-              padding: '14px 16px',
-              border: '1px solid var(--border-medium)',
-              borderRadius: 'var(--radius-md)',
-              fontSize: 14,
+              padding: '12px 14px',
+              border: '1px solid #D8D7D1',
+              borderRadius: 8,
+              fontSize: 13.5,
               lineHeight: 1.6,
               fontFamily: 'var(--font-sans)',
               resize: 'vertical',
               outline: 'none',
-              backgroundColor: '#ffffff',
+              backgroundColor: '#FFFFFF',
+              color: '#202522',
             }}
-            onFocus={e => e.target.style.borderColor = 'var(--navy-700)'}
-            onBlur={e => e.target.style.borderColor = 'var(--border-medium)'}
+            onFocus={e => e.target.style.borderColor = '#245B4A'}
+            onBlur={e => e.target.style.borderColor = '#D8D7D1'}
           />
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 14 }}>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <button
-                onClick={() => { setTenderText(inputText); navigateTo('procurement'); }}
-                className="btn-tech btn-secondary btn-sm"
-              >
-                <FileText size={14} /> Upload Tender PDF
-              </button>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 14 }}>
             <button
               onClick={handleAnalyze}
               disabled={!inputText.trim()}
-              className="btn-tech btn-saffron"
-              style={{ padding: '9px 24px', fontSize: 13, fontWeight: 600 }}
+              className="btn-tech"
+              style={{ padding: '10px 22px', fontSize: 13, fontWeight: 700, backgroundColor: '#245B4A', color: '#FFFFFF', border: 'none', borderRadius: 6 }}
             >
-              Analyze <ArrowRight size={15} />
+              Analyze Tender <ArrowRight size={15} />
+            </button>
+            <button
+              onClick={() => navigateTo('search')}
+              className="btn-tech"
+              style={{ padding: '10px 18px', fontSize: 13, fontWeight: 600, backgroundColor: '#FFFFFF', color: '#245B4A', border: '1px solid #D8D7D1', borderRadius: 6 }}
+            >
+              <Search size={14} /> Search Standards
+            </button>
+            <button
+              onClick={() => { setTenderText(inputText); navigateTo('procurement'); }}
+              className="btn-tech btn-ghost btn-sm"
+              style={{ marginLeft: 'auto', color: '#66706A' }}
+            >
+              <FileText size={13} /> Upload Tender PDF
             </button>
           </div>
         </div>

@@ -1,3 +1,0 @@
-warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
-Processing corpus root: D:\BIS\AI_RECOMMENDATION_ENGINE-scraper\AI_RECOMMENDATION_ENGINE-scraper\BIS_PDFs_Part1 | limit=700 | hash_cache=True
-Done: {'total': 700, 'success': 666, 'partial': 18, 'failed': 0, 'skipped': 16, 'ocr_required': 316}

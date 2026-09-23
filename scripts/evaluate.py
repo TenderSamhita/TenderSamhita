@@ -106,13 +106,13 @@ def evaluate_retrieval():
             hits_at_1 += 1
         if found_at_5:
             hits_at_5 += 1
-        status1 = "??"" if found_at_5 else "??--"
+        status1 = "[OK]" if found_at_5 else "[FAIL]"
         print(f"{status1} Query: \"{q[:60]}\" | expected {expected} ({expected_part or '-'}) | top1={top5_ids[0] if top5_ids else 'none'} | top5={top5_ids[:3]}")
 
     print("="*70)
     print(f"Retrieval metrics: P@1={hits_at_1}/{total}={hits_at_1/total:.2%}, P@5={hits_at_5}/{total}={hits_at_5/total:.2%}")
     if hits_at_5/total < 0.6:
-        print("WARN: Retrieval below 60% ??" tune chunking/embedding/hybrid weights")
+        print("WARN: Retrieval below 60% -- tune chunking/embedding/hybrid weights")
     else:
         print("PASS: Retrieval benchmark OK")
 
@@ -132,7 +132,7 @@ def hallucination_tests():
     indexes_dir = ROOT / cfg.get("paths", {}).get("indexes_dir", "data/indexes")
     db_path = ROOT / cfg.get("paths", {}).get("db_path", "data/bis.db")
     if not (indexes_dir / "bm25.pkl").exists():
-        print("Skipping hallucination tests ??" indexes not built")
+        print("Skipping hallucination tests -- indexes not built")
         return
 
     bm25 = BM25Index.load(indexes_dir / "bm25.pkl")
@@ -171,13 +171,13 @@ def hallucination_tests():
             print(f"\nTest: {name} | query=\"{query[:60]}\"")
             print(f"  Ranked: {len(ranked)} | Top score: {ranked[0]['score'] if ranked else 'none'} | Abstain: {abst}")
             if hallucinated:
-                print(f"  ??-- FAIL: Hallucinated IDs: {hallucinated}")
+                print(f"  [FAIL] Hallucinated IDs: {hallucinated}")
             else:
-                print(f"  ??" No hallucinated IS numbers")
+                print(f"  [OK] No hallucinated IS numbers")
             if name in ("nonexistent IS number", "gibberish") and abst["decision"] == "ABSTAIN":
-                print(f"  ??" Correctly abstained for insufficient evidence")
+                print(f"  [OK] Correctly abstained for insufficient evidence")
             elif name in ("nonexistent IS number", "gibberish"):
-                print(f"  ??? Did not abstain ??" but returned low confidence: {abst}")
+                print(f"  [WARN] Did not abstain -- but returned low confidence: {abst}")
         except Exception as e:
             print(f"  {name}: ERROR {e}")
 

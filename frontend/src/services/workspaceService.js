@@ -36,6 +36,7 @@ export const workspaceService = {
     return request('/api/tender/full-analysis', {
       method: 'POST',
       body: JSON.stringify({ text, workspace_id: workspaceId }),
+      timeout: 90000,
     });
   },
 };

@@ -79,7 +79,7 @@ export function TenderSamhitaLogo({
             fontWeight: 800, 
             fontSize: height > 34 ? '15px' : '14px', 
             letterSpacing: '0.04em',
-            color: isLightText ? '#ffffff' : '#0b192c',
+            color: isLightText ? '#ffffff' : '#202522',
             textTransform: 'uppercase'
           }}>
             TENDER SAMHITA
@@ -91,7 +91,7 @@ export function TenderSamhitaLogo({
             fontSize: '10px', 
             fontWeight: 500,
             letterSpacing: '0.02em',
-            color: isLightText ? '#94a3b8' : '#64748b',
+            color: isLightText ? '#94a3b8' : '#66706A',
             whiteSpace: 'nowrap'
           }}>
             Procurement Standards Intelligence

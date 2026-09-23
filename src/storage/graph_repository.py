@@ -76,22 +76,37 @@ def get_standard_graph(session: Session, standard_id: str) -> Dict:
             "relationship": "specifies",
         })
 
-    # References as related standard nodes
+    # References as related standard nodes — expose normative as graph nodes
     refs = session.query(Reference).filter_by(source_standard_id=standard_id).all()
-    for ref in refs[:10]:
+    for ref in refs[:15]:
+        # Determine if target exists in corpus
+        target_exists = session.get(Standard, ref.target_identifier) is not None if ref.target_identifier else False
+        # Also try normalized lookup
+        if not target_exists and ref.target_identifier:
+            # Check StandardRelationship for linkage
+            pass
         ref_id = ref.target_identifier or ref.reference_id
+        # Use deterministic node id to avoid collisions
+        node_id = f"ref_{standard_id}_{ref.reference_id}"
         nodes.append({
-            "id": ref_id,
-            "type": "reference",
+            "id": node_id,
+            "type": "normative_standard" if (ref.relationship_type or "").lower().startswith("normative") else "reference",
             "label": ref.target_identifier,
-            "relationship_type": ref.relationship_type,
+            "target_identifier": ref.target_identifier,
+            "relationship_type": ref.relationship_type or "normative_reference",
             "page": ref.page,
+            "raw_text": (ref.raw_text or "")[:300],
+            "confidence": ref.confidence,
+            "is_indexed": target_exists,
+            "exists_in_corpus": target_exists,
         })
         edges.append({
             "source": standard_id,
-            "target": ref_id,
-            "relationship": ref.relationship_type or "references",
+            "target": node_id,
+            "target_identifier": ref.target_identifier,
+            "relationship": ref.relationship_type or "normative_reference",
             "page": ref.page,
+            "evidence": (ref.raw_text or "")[:200],
         })
 
     return {"nodes": nodes, "edges": edges}

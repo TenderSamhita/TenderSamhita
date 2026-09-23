@@ -52,11 +52,8 @@ export function SourcePageViewer() {
     setTimeout(() => setCopiedLink(false), 2000);
   };
 
-  const isPinned = isEvidencePinned({
-    standard_id: standardId,
-    page: currentPage,
-    section: section || '6.1'
-  });
+  const evidenceText = highlight || property || `Page ${currentPage}`;
+  const isPinned = isEvidencePinned(evidenceText, standardId);
 
   return (
     <div className="split-modal-overlay" onClick={closeSourcePage}>
