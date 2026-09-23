@@ -35,6 +35,9 @@ class Standard(Base):
     page_count = Column(Integer, nullable=True)
     full_text = Column(Text, nullable=True)
     source_hash = Column(String, nullable=True)
+    scope_text = Column(Text, nullable=True)  # dedicated scope field
+    keywords = Column(Text, nullable=True)  # JSON array of keywords
+    ics_code_description = Column(String, nullable=True)
     created_at = Column(DateTime, default=dt.datetime.utcnow)
 
     sections = relationship("Section", back_populates="standard", cascade="all, delete-orphan")
@@ -152,4 +155,93 @@ class Document(Base):
     parse_status = Column(String)
     ocr_required = Column(Integer, default=0)
     error_message = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=dt.datetime.utcnow)
+
+
+# ── Tender Samhita 2.0 Extensions ─────────────────────────────────────────────
+
+
+class Workspace(Base):
+    __tablename__ = "workspaces"
+    workspace_id = Column(String, primary_key=True)
+    name = Column(String, nullable=True)
+    description = Column(Text, nullable=True)
+    tender_text = Column(Text, nullable=True)
+    tender_pdf_path = Column(String, nullable=True)
+    status = Column(String, default="active")  # active, review, completed, archived
+    created_at = Column(DateTime, default=dt.datetime.utcnow)
+    updated_at = Column(DateTime, default=dt.datetime.utcnow, onupdate=dt.datetime.utcnow)
+
+
+class WorkspaceRequirement(Base):
+    __tablename__ = "workspace_requirements"
+    req_id = Column(String, primary_key=True)
+    workspace_id = Column(String, ForeignKey("workspaces.workspace_id"))
+    category = Column(String)  # product, material, application, capacity, dimension, testing, safety, certification
+    parameter = Column(String)
+    value = Column(String, nullable=True)
+    unit = Column(String, nullable=True)
+    source_page = Column(Integer, nullable=True)
+    source_text = Column(Text, nullable=True)
+    is_specified = Column(Integer, default=1)  # 1=specified, 0=not specified in tender
+    created_at = Column(DateTime, default=dt.datetime.utcnow)
+
+
+class StandardRelationship(Base):
+    __tablename__ = "standard_relationships"
+    relationship_id = Column(String, primary_key=True)
+    source_standard_id = Column(String, ForeignKey("standards.standard_id"))
+    target_standard_id = Column(String, nullable=True)
+    target_identifier = Column(String)
+    relationship_type = Column(String)  # normative_reference, test_method, allied, amendment, supersedes, superseded_by, terminology, safety
+    evidence_page = Column(Integer, nullable=True)
+    evidence_section = Column(String, nullable=True)
+    evidence_text = Column(Text, nullable=True)
+    confidence = Column(Float, default=0.5)
+    created_at = Column(DateTime, default=dt.datetime.utcnow)
+
+
+class Traceability(Base):
+    __tablename__ = "traceability"
+    trace_id = Column(String, primary_key=True)
+    workspace_id = Column(String, ForeignKey("workspaces.workspace_id"))
+    requirement_id = Column(String, nullable=True)
+    tender_parameter = Column(String)
+    tender_value = Column(String, nullable=True)
+    matched_standard_id = Column(String, nullable=True)
+    matched_clause = Column(String, nullable=True)
+    evidence_page = Column(Integer, nullable=True)
+    evidence_text = Column(Text, nullable=True)
+    status = Column(String)  # supported, partially_supported, unverified, conflict, not_found, review_required
+    officer_decision = Column(String, nullable=True)
+    officer_notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=dt.datetime.utcnow)
+
+
+class SpecificationItem(Base):
+    __tablename__ = "specification_items"
+    item_id = Column(String, primary_key=True)
+    workspace_id = Column(String, ForeignKey("workspaces.workspace_id"))
+    parameter = Column(String)
+    requirement = Column(Text)
+    unit = Column(String, nullable=True)
+    condition = Column(String, nullable=True)
+    applicable_standard_id = Column(String, nullable=True)
+    clause = Column(String, nullable=True)
+    evidence_page = Column(Integer, nullable=True)
+    evidence_text = Column(Text, nullable=True)
+    status = Column(String)  # supported, unsupported, requires_input
+    officer_decision = Column(String, nullable=True)
+    sort_order = Column(Integer, default=0)
+    created_at = Column(DateTime, default=dt.datetime.utcnow)
+
+
+class OfficerAction(Base):
+    __tablename__ = "officer_actions"
+    action_id = Column(String, primary_key=True)
+    workspace_id = Column(String, nullable=True)
+    action_type = Column(String)  # decision, note, export, review
+    target_type = Column(String)  # requirement, standard, specification, evidence
+    target_id = Column(String, nullable=True)
+    action_value = Column(Text, nullable=True)
     created_at = Column(DateTime, default=dt.datetime.utcnow)

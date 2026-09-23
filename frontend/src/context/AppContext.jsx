@@ -4,9 +4,9 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
   // Navigation State
-  const [currentView, setCurrentView] = useState('dashboard');
+  const [currentView, setCurrentView] = useState('overview');
   const [activeStandardId, setActiveStandardId] = useState('IS_1448_Part_97_2026');
-  const [deepDiveTab, setDeepDiveTab] = useState('mindmap'); // Default to Mind Map (Knowledge Map) hero!
+  const [deepDiveTab, setDeepDiveTab] = useState('mindmap');
   
   // Layout State
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -14,9 +14,7 @@ export function AppProvider({ children }) {
   const [selectedMindMapNode, setSelectedMindMapNode] = useState(null);
 
   // Active Tender Specification Data
-  const [tenderText, setTenderText] = useState(
-    'Procurement of Jet Fuel Thermal Oxidation Stability Test Apparatus and consumables. Requirements: Heater tube diameter 4.737 mm, test temperature 260 deg C, operating pressure 3.45 MPa, volumetric fuel flow 3.0 mL/min for aviation turbine fuel qualification.'
-  );
+  const [tenderText, setTenderText] = useState('');
   const [tenderAnalysis, setTenderAnalysis] = useState(null);
   const [recommendationResult, setRecommendationResult] = useState(null);
   const [comparisonResult, setComparisonResult] = useState(null);
@@ -44,12 +42,17 @@ export function AppProvider({ children }) {
     setCurrentView(view);
     if (extra.standardId) setActiveStandardId(extra.standardId);
     if (extra.tab) setDeepDiveTab(extra.tab);
+    if (extra.tenderText) setTenderText(extra.tenderText);
+    if (extra.workspaceId) {
+      // Store workspaceId for workspace views
+      setCurrentView('procurement-workspace');
+    }
   };
 
   const openStandard = (standardId, tab = 'mindmap') => {
     setActiveStandardId(standardId);
     setDeepDiveTab(tab);
-    setCurrentView('deepdive');
+    setCurrentView('standard-detail');
     setSelectedMindMapNode(null);
   };
 

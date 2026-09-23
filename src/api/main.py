@@ -33,6 +33,9 @@ from .routes_search import router as search_router
 from .routes_recommend import router as recommend_router
 from .routes_standards import router as standards_router
 from .routes_tender import router as tender_router
+from .routes_workspaces import router as workspaces_router
+from .routes_analysis import router as analysis_router
+from .routes_graph import router as graph_router
 
 logger = logging.getLogger(__name__)
 
@@ -92,6 +95,9 @@ app.include_router(search_router, prefix="/api", tags=["search"])
 app.include_router(recommend_router, prefix="/api", tags=["recommend"])
 app.include_router(standards_router, prefix="/api", tags=["standards"])
 app.include_router(tender_router, prefix="/api", tags=["tender"])
+app.include_router(workspaces_router, prefix="/api", tags=["workspaces"])
+app.include_router(analysis_router, prefix="/api", tags=["analysis"])
+app.include_router(graph_router, prefix="/api", tags=["graph"])
 
 # Static for figures (if available)
 figures_dir = resolve_path(config.get("paths", {}).get("figures_dir", "data/processed/figures"))
@@ -117,16 +123,17 @@ def health():
     indexes_dir = resolve_path(config.get("paths", {}).get("indexes_dir", "data/indexes"))
     return {
         "status": "ok",
-        "version": "0.1.0",
+        "version": "2.0.0",
         "db_exists": db_path.exists(),
         "indexes_exist": indexes_dir.exists(),
         "retrieval": "hybrid (FAISS + BM25)",
+        "intelligence": ["gap_detector", "conflict_detector", "traceability", "specification_builder", "quality_review"],
     }
 
 
 @app.get("/api/stats")
 def stats():
-    from ..storage.models import Standard, Chunk, Table, Figure, Reference, Specification, Document
+    from ..storage.models import Standard, Chunk, Table, Figure, Reference, Specification, Document, Workspace, StandardRelationship
     db_path = resolve_path(config.get("paths", {}).get("db_path", "data/bis.db"))
     if not db_path.exists():
         return {"error": "DB not initialized. Run ingest.py first."}
@@ -142,6 +149,8 @@ def stats():
             "references": session.query(Reference).count(),
             "specifications": session.query(Specification).count(),
             "documents": session.query(Document).count(),
+            "workspaces": session.query(Workspace).count(),
+            "relationships": session.query(StandardRelationship).count(),
         }
     finally:
         session.close()

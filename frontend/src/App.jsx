@@ -2,48 +2,69 @@ import React from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { ReviewProvider } from './context/ReviewContext';
 import { AppHeader } from './components/layout/AppHeader';
-import { AppSidebar } from './components/layout/AppSidebar';
 import { SourcePageViewer } from './components/common/SourcePageViewer';
 import { FigureLightbox } from './components/deepdive/FigureLightbox';
 
-import { DashboardPage } from './pages/DashboardPage';
-import { TenderAnalysisPage } from './pages/TenderAnalysisPage';
-import { RecommendationsPage } from './pages/RecommendationsPage';
-import { StandardDeepDivePage } from './pages/StandardDeepDivePage';
-import { ComparisonPage } from './pages/ComparisonPage';
+import { OverviewPage } from './pages/OverviewPage';
+import { ProcurementWorkspace } from './pages/ProcurementWorkspace';
+import { StandardsPage } from './pages/StandardsPage';
+import { StandardDetailPage } from './pages/StandardDetailPage';
 import { SearchPage } from './pages/SearchPage';
-import { ReviewWorkspacePage } from './pages/ReviewWorkspacePage';
-import { SystemStatusPage } from './pages/SystemStatusPage';
-import { RetrievalDebugPage } from './pages/RetrievalDebugPage';
+import { SystemPage } from './pages/SystemPage';
+
+import './styles/workspace.css';
+
+function AppNav() {
+  const { currentView, navigateTo } = useApp();
+
+  const navItems = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'procurement', label: 'Procurements' },
+    { id: 'standards', label: 'Standards' },
+    { id: 'search', label: 'Search' },
+  ];
+
+  return (
+    <nav className="app-nav" role="navigation" aria-label="Primary">
+      {navItems.map(item => (
+        <button
+          key={item.id}
+          className={`nav-item ${currentView === item.id ? 'active' : ''}`}
+          onClick={() => navigateTo(item.id)}
+        >
+          {item.label}
+        </button>
+      ))}
+      <div style={{ flex: 1 }} />
+      <button
+        className={`nav-item ${currentView === 'system' ? 'active' : ''}`}
+        onClick={() => navigateTo('system')}
+        style={{ fontSize: '11.5px', color: 'var(--text-muted)' }}
+      >
+        System
+      </button>
+    </nav>
+  );
+}
 
 function AppContent() {
   const { currentView } = useApp();
 
   return (
     <div className="app-layout">
-      {/* 1. Official Government Header */}
       <AppHeader />
+      <AppNav />
 
-      {/* 2. Main Workspace Layout */}
-      <div className="app-body">
-        {/* Desktop Sidebar Navigation with Progressive Disclosure */}
-        <AppSidebar />
+      <main className="app-main" id="main-content" role="main">
+        {currentView === 'overview' && <OverviewPage />}
+        {currentView === 'procurement' && <ProcurementWorkspace />}
+        {currentView === 'procurement-workspace' && <ProcurementWorkspace />}
+        {currentView === 'standards' && <StandardsPage />}
+        {currentView === 'standard-detail' && <StandardDetailPage />}
+        {currentView === 'search' && <SearchPage />}
+        {currentView === 'system' && <SystemPage />}
+      </main>
 
-        {/* Dynamic Main Workspace Content */}
-        <main className="app-main" id="main-content" role="main">
-          {currentView === 'dashboard' && <DashboardPage />}
-          {currentView === 'tender' && <TenderAnalysisPage />}
-          {currentView === 'recommendations' && <RecommendationsPage />}
-          {currentView === 'deepdive' && <StandardDeepDivePage />}
-          {currentView === 'compare' && <ComparisonPage />}
-          {currentView === 'search' && <SearchPage />}
-          {currentView === 'review' && <ReviewWorkspacePage />}
-          {currentView === 'system' && <SystemStatusPage />}
-          {currentView === 'debug' && <RetrievalDebugPage />}
-        </main>
-      </div>
-
-      {/* 3. Global Technical Modals & Viewers */}
       <SourcePageViewer />
       <FigureLightbox />
     </div>
